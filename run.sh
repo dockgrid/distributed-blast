@@ -7,7 +7,8 @@ if [[ $1 == "" ]]
 fi
 
 echo "[1/4] Downloading sample $1"
-wget -O sample.fa $1
+wget -O sample.fa.gz $1
+gzip -d sample.fa.gz
 
 echo "[2/4] Runing blast against 16S_ribosomal_RNA NCBI database"
 blastn -db db/16S_ribosomal_RNA -query sample.fa $BLAST_PARAMETERS | tee blast.out
