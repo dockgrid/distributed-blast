@@ -7,4 +7,4 @@ WORKDIR /pipeline
 
 ADD http://ftp.ncbi.nih.gov/blast/db/16S_ribosomal_RNA.tar.gz db/
 RUN tar -zxvf db/16S_ribosomal_RNA.tar.gz -C db/
-CMD ["/bin/bash", "/pipeline/run.sh"]
+ENTRYPOINT ["/bin/bash", "/pipeline/run.sh"]
